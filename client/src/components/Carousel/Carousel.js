@@ -28,9 +28,21 @@ export default function Carousel(){
                 {items.map(item => <CarouselItem item={item}/>)}
             </div>
             <div className='carousel-buttons'>
-                <button><FontAwesomeIcon icon={faCircleLeft} /></button>
-                <div className='indicators'><FontAwesomeIcon icon={faCircleDot} /></div>
-                <button><FontAwesomeIcon icon={faCircleRight} /></button>
+                <button className='button-arrow'>
+                    <FontAwesomeIcon icon={faCircleLeft} />
+                </button>
+                <div className='indicators'>
+                    {items.map((item, index) => {
+                        return (
+                            <button className='indicator-buttons'>
+                                <FontAwesomeIcon icon={faCircleDot} />
+                            </button>
+                        )
+                    })}
+                </div>
+                <button className='button-arrow'>
+                    <FontAwesomeIcon icon={faCircleRight} />
+                </button>
             </div>
             
         </div>
