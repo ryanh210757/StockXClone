@@ -19,28 +19,38 @@ export default function Carousel(){
         }
     ]
 
+    const updateIndex = (newIndex) => {
+        if(newIndex < 0){
+            newIndex = 0
+        }else if (newIndex >= items.length){
+            newIndex = items.length - 1
+        }
+        setActiveIndex(newIndex)
+    }
 
+    
+ 
     return (
         <>
         <div className='carousel'>
             <div className='inner'
-                    style={{transform: `translate:(-${activeIndex * 100})`}}>
+                    style={{transform: `translate(-${activeIndex * 100}%)`}}>
                 {items.map(item => <CarouselItem item={item}/>)}
             </div>
             <div className='carousel-buttons'>
-                <button className='button-arrow'>
+                <button onClick={() => updateIndex(activeIndex -1)}className='button-arrow'>
                     <FontAwesomeIcon icon={faCircleLeft} />
                 </button>
                 <div className='indicators'>
                     {items.map((item, index) => {
                         return (
-                            <button className='indicator-buttons'>
-                                <FontAwesomeIcon icon={faCircleDot} />
+                            <button onClick={() => updateIndex(index)}className='indicator-buttons'>
+                                <FontAwesomeIcon className={index===activeIndex ? "indicator-symbol-active" : "indicator-symbol"}icon={faCircleDot} />
                             </button>
                         )
                     })}
                 </div>
-                <button className='button-arrow'>
+                <button onClick={() => updateIndex(activeIndex + 1)} className='button-arrow'>
                     <FontAwesomeIcon icon={faCircleRight} />
                 </button>
             </div>
