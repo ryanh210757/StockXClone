@@ -1,0 +1,59 @@
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.ul-css{
+    display: grid;
+    grid-gap: var(--chakra-space-2);
+    grid-template-columns: repeat(6, 1fr);
+    list-style-type: none;
+    margin-bottom: var(--chakra-space-6);
+    margin-inline-start: calc(var(--chakra-space-4) * -1);
+    margin-inline-end: calc(var(--chakra-space-4) * -1);
+    padding-inline-start: var(--chakra-space-4);
+    padding-inline-end: var(--chakra-space-4);
+    overflow: auto;
+}
+
+
+li{
+    display: list-item;
+}
+
+.li-item{
+    border: 2px solid green;
+    width: 180px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.li-item > img{
+    width: 140px;
+    height: 75px;
+    object-fit: contain;
+
+}
+
+.product-container{
+    border: 2px solid red;
+}
+
+.shoeName{
+
+}
+
+.lowestAsk{
+
+}
+
+.price{
+    
+}
